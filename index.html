@@ -185,7 +185,7 @@
         // Función para crear el gráfico de líneas
         function crearGraficoLineas() {
             // Cargar el archivo JSON con los datos para el gráfico de líneas
-            d3.json("data/route_class_avg_data_clean.json").then(function(data) {
+            d3.json("https://raw.githubusercontent.com/ccardenas93/herramientas_visualizacion/refs/heads/main/data/route_class_avg_data_clean.json").then(function(data) {
                 // Extraer todas las rutas únicas
                 const rutas = Array.from(new Set(data.map(d => d.route)));
 
@@ -353,7 +353,7 @@
         // Función para crear el gráfico de acordes (respetando tu código)
         function crearGraficoAcordes() {
             // Cargar el archivo JSON con los datos para el gráfico de acordes
-            d3.json('data/datos_acordes.json').then(function(datosAcordes) {
+            d3.json("https://raw.githubusercontent.com/ccardenas93/herramientas_visualizacion/refs/heads/main/data/datos_acordes.json").then(function(datosAcordes) {
                 const listaCiudades = datosAcordes.ciudades;
                 let matrizConexiones = datosAcordes.matriz;
     
@@ -464,8 +464,8 @@
 
             // Cargar los datos del GeoJSON para España y el archivo de datos acordes
             Promise.all([
-                d3.json("data/spain.json"),
-                d3.json("data/datos_acordes.json") // Cargar datos desde el archivo JSON
+                d3.json("https://raw.githubusercontent.com/ccardenas93/herramientas_visualizacion/refs/heads/main/data/spain.json"),
+                d3.json("https://raw.githubusercontent.com/ccardenas93/herramientas_visualizacion/refs/heads/main/data/datos_acordes.json") // Cargar datos desde el archivo JSON
             ]).then(function([geoData, citiesData]) {
 
                 // Dibujar el mapa de España
@@ -678,7 +678,7 @@
             }
 
             // Cargar los datos JSON y crear el gráfico
-            d3.json("data/travel_frequency.json").then(function(data) {
+            d3.json("https://raw.githubusercontent.com/ccardenas93/herramientas_visualizacion/refs/heads/main/data/travel_frequency.json").then(function(data) {
                 const chartInstance = chart(data);
                 document.getElementById('chart').appendChild(chartInstance);
 
